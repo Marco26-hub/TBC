@@ -1,7 +1,9 @@
 // Header scroll effect
 const header = document.getElementById('header');
+let lastKnownScrollY = window.scrollY;
 if (header) {
     window.addEventListener('scroll', () => {
+        lastKnownScrollY = window.scrollY;
         header.classList.toggle('scrolled', window.scrollY > 60);
     }, { passive: true });
 }
@@ -9,17 +11,34 @@ if (header) {
 // Mobile menu toggle
 const menuToggle = document.getElementById('menuToggle');
 const navMenu = document.getElementById('navMenu');
+let pageScrollY = 0;
 
 function setPageScrollLocked(isLocked) {
-    document.body.style.overflowY = isLocked ? 'hidden' : '';
-    document.documentElement.style.overflowY = isLocked ? 'hidden' : '';
+    document.body.classList.toggle('nav-open', isLocked);
+    header?.classList.toggle('nav-open', isLocked);
+
+    if (isLocked) {
+        pageScrollY = lastKnownScrollY || window.scrollY;
+        document.body.style.top = `-${pageScrollY}px`;
+    } else {
+        const restoreY = pageScrollY;
+        document.body.style.top = '';
+        if (restoreY) window.scrollTo({ top: restoreY, behavior: 'auto' });
+        lastKnownScrollY = restoreY || window.scrollY;
+        pageScrollY = 0;
+    }
 }
 
 if (menuToggle && navMenu) {
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-controls', 'navMenu');
+
     menuToggle.addEventListener('click', () => {
-        menuToggle.classList.toggle('active');
-        navMenu.classList.toggle('active');
-        setPageScrollLocked(navMenu.classList.contains('active'));
+        const isOpen = !navMenu.classList.contains('active');
+        menuToggle.classList.toggle('active', isOpen);
+        navMenu.classList.toggle('active', isOpen);
+        menuToggle.setAttribute('aria-expanded', String(isOpen));
+        setPageScrollLocked(isOpen);
     });
 }
 
@@ -27,6 +46,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
         menuToggle?.classList.remove('active');
         navMenu?.classList.remove('active');
+        menuToggle?.setAttribute('aria-expanded', 'false');
         setPageScrollLocked(false);
     });
 });
@@ -35,19 +55,30 @@ document.addEventListener('click', (e) => {
     if (navMenu && menuToggle && !navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
         menuToggle.classList.remove('active');
         navMenu.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
         setPageScrollLocked(false);
     }
 });
 
-window.addEventListener('pageshow', () => setPageScrollLocked(false));
-window.addEventListener('orientationchange', () => setPageScrollLocked(false));
+function closeMobileMenu() {
+    menuToggle?.classList.remove('active');
+    navMenu?.classList.remove('active');
+    menuToggle?.setAttribute('aria-expanded', 'false');
+    setPageScrollLocked(false);
+}
+
+window.addEventListener('pageshow', closeMobileMenu);
+window.addEventListener('orientationchange', closeMobileMenu);
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 768 && navMenu?.classList.contains('active')) {
+        closeMobileMenu();
+    }
+});
 
 // Escape closes menu
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && navMenu?.classList.contains('active')) {
-        menuToggle?.classList.remove('active');
-        navMenu.classList.remove('active');
-        setPageScrollLocked(false);
+        closeMobileMenu();
     }
 });
 

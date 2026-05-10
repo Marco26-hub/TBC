@@ -174,6 +174,11 @@ p {
     box-shadow: 0 1px 0 rgba(198, 169, 107, 0.2);
 }
 
+.header.nav-open {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
 .header.scrolled .logo {
     color: var(--white);
 }
@@ -2253,19 +2258,32 @@ p {
 }
 
 @media (max-width: 768px) {
+    body.nav-open {
+        position: fixed;
+        left: 0;
+        right: 0;
+        width: 100%;
+        overflow: hidden;
+    }
+
     .nav {
         display: none;
         flex-direction: column;
         position: fixed;
         top: 0;
         right: 0;
-        bottom: 0;
+        bottom: auto;
         width: min(280px, 80vw);
+        height: 100vh;
+        height: 100dvh;
+        max-height: 100vh;
+        max-height: 100dvh;
         background: var(--black);
-        padding: 5rem 1.5rem 2rem;
+        padding: max(5rem, env(safe-area-inset-top)) 1.5rem max(2rem, env(safe-area-inset-bottom));
         gap: 0;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
         border-left: 1px solid rgba(198, 169, 107, 0.15);
         z-index: 250;
     }
