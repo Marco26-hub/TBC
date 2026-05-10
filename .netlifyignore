@@ -1,0 +1,18 @@
+# Internal folders and local-only files
+.git/
+.claude/
+.netlify/
+.DS_Store
+node_modules/
+gdpr-interno/
+gdpr-interno.zip
+documenti-servizi-interni/
+documenti-servizi-interni.zip
+convert-internal-docs.mjs
+contratti/
+contratti.zip
+ai-website-cloner-template/
+node_modules/
+tbc-bot/
+*.pdf
+*.zip

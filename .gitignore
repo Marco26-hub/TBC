@@ -1,0 +1,20 @@
+# Local Netlify folder
+.netlify
+.DS_Store
+
+# Internal GDPR documentation (local, not for public deploy)
+gdpr-interno/
+documenti-servizi-interni/
+documenti-servizi-interni.zip
+gdpr-interno.zip
+convert-internal-docs.mjs
+contratti/
+contratti.zip
+
+# Heavy / non-deploy
+node_modules/
+tbc-bot/
+.claude/
+*.zip
+.env
+.env.*

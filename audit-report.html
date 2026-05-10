@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Marketing Audit Report — The Blondes Cleaning</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #C6A96B;
+  --gold-dark: #A8893A;
+  --gold-light: #E0C088;
+  --black: #0A0A0A;
+  --gray-900: #1A1A1A;
+  --gray-700: #4A4845;
+  --gray-500: #7A7872;
+  --gray-300: #C9C5BD;
+  --gray-100: #ECE9E2;
+  --gray-50: #F7F5F0;
+  --white: #FAFAF7;
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans: 'Inter', -apple-system, sans-serif;
+  --red: #B5453A;
+  --green: #5A7A4D;
+  --orange: #C99339;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+@page { size: A4; margin: 0; }
+
+html, body {
+  font-family: var(--sans);
+  color: var(--gray-700);
+  background: var(--white);
+  font-size: 9.5pt;
+  line-height: 1.5;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.page {
+  width: 210mm;
+  height: 297mm;
+  padding: 14mm 14mm 16mm;
+  page-break-after: always;
+  background: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+.page:last-child { page-break-after: auto; }
+
+/* ============= COVER ============= */
+.cover {
+  background: var(--black);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  padding: 22mm 18mm;
+}
+.cover-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=70');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.18;
+}
+.cover-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(10,10,10,0.92) 50%, rgba(10,10,10,0.7) 100%);
+}
+.cover-inner { position: relative; z-index: 2; display: flex; flex-direction: column; height: 100%; }
+
+.cover-header { display: flex; justify-content: space-between; align-items: flex-start; }
+.cover-logo {
+  font-family: var(--serif);
+  font-size: 26pt;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--gold);
+}
+.cover-logo-sub {
+  font-size: 7pt;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  margin-top: 4px;
+}
+.cover-meta {
+  text-align: right;
+  font-size: 7.5pt;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.8;
+}
+
+.cover-center { flex: 1; display: flex; flex-direction: column; justify-content: center; max-width: 145mm; }
+.cover-eyebrow {
+  font-size: 8pt;
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 10mm;
+}
+.cover h1 {
+  font-family: var(--serif);
+  font-size: 38pt;
+  font-weight: 400;
+  line-height: 1.05;
+  color: var(--white);
+  letter-spacing: -0.015em;
+  margin-bottom: 8mm;
+}
+.cover h1 em {
+  color: var(--gold);
+  font-style: italic;
+  font-weight: 600;
+}
+.cover-tagline {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 13pt;
+  color: rgba(255,255,255,0.78);
+  line-height: 1.5;
+  max-width: 130mm;
+  margin-bottom: 14mm;
+}
+
+.cover-score-block {
+  display: flex;
+  align-items: stretch;
+  gap: 14mm;
+  padding: 8mm 0;
+  border-top: 1px solid rgba(198,169,107,0.3);
+  border-bottom: 1px solid rgba(198,169,107,0.3);
+  margin-bottom: 12mm;
+}
+.cover-score-num {
+  font-family: var(--serif);
+  font-size: 64pt;
+  line-height: 1;
+  color: var(--gold);
+  font-weight: 600;
+}
+.cover-score-info { display: flex; flex-direction: column; justify-content: center; }
+.cover-score-label {
+  font-size: 8pt;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 4mm;
+}
+.cover-score-grade {
+  font-family: var(--serif);
+  font-size: 22pt;
+  color: var(--white);
+  margin-bottom: 2mm;
+}
+.cover-score-desc {
+  font-size: 9pt;
+  color: rgba(255,255,255,0.7);
+  max-width: 80mm;
+  line-height: 1.5;
+}
+
+.cover-footer { display: flex; justify-content: space-between; align-items: flex-end; }
+.cover-footer-left {
+  font-size: 7pt;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+}
+.cover-footer-right {
+  text-align: right;
+  font-size: 7pt;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ============= INTERIOR PAGES ============= */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 5mm;
+  border-bottom: 1px solid var(--gray-100);
+  margin-bottom: 8mm;
+}
+.page-header-logo {
+  font-family: var(--serif);
+  font-size: 12pt;
+  font-weight: 700;
+  color: var(--black);
+  letter-spacing: 0.04em;
+}
+.page-header-section {
+  font-size: 7pt;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.page-eyebrow {
+  font-size: 7.5pt;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 4mm;
+}
+h1.page-title {
+  font-family: var(--serif);
+  font-size: 19pt;
+  color: var(--black);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  margin-bottom: 3mm;
+}
+h1.page-title em { color: var(--gold); font-style: italic; }
+.page-lead {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 10pt;
+  color: var(--gray-500);
+  line-height: 1.5;
+  max-width: 160mm;
+  margin-bottom: 5mm;
+  padding-bottom: 4mm;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+h2 {
+  font-family: var(--serif);
+  font-size: 12pt;
+  color: var(--black);
+  font-weight: 600;
+  margin: 5mm 0 2mm;
+  letter-spacing: -0.01em;
+}
+h2.h2-gold { color: var(--gold-dark); }
+h2:first-child { margin-top: 0; }
+
+h3 {
+  font-size: 9pt;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--black);
+  margin: 5mm 0 2mm;
+  padding-bottom: 1.5mm;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+p { margin-bottom: 2mm; color: var(--gray-700); font-size: 9pt; line-height: 1.5; }
+
+strong { color: var(--black); font-weight: 600; }
+
+ul, ol { margin: 0 0 4mm 5mm; }
+li {
+  font-size: 8.8pt;
+  color: var(--gray-700);
+  line-height: 1.45;
+  margin-bottom: 1.2mm;
+  padding-left: 2mm;
+}
+ol li::marker { color: var(--gold); font-weight: 700; }
+ul li { list-style: none; position: relative; padding-left: 5mm; }
+ul li::before { content: '—'; position: absolute; left: 0; color: var(--gold); font-weight: 600; }
+
+/* ============= SCORE TABLE ============= */
+.score-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 6mm 0;
+  font-size: 9pt;
+}
+.score-table th {
+  text-align: left;
+  padding: 3mm 3mm;
+  background: var(--black);
+  color: var(--gold);
+  font-size: 7.5pt;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.score-table td {
+  padding: 3mm 3mm;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: middle;
+}
+.score-table tr.total-row td {
+  background: var(--gray-50);
+  font-weight: 700;
+  color: var(--black);
+  border-bottom: 2px solid var(--gold);
+  font-size: 10pt;
+}
+
+.bar {
+  display: inline-block;
+  width: 100%;
+  max-width: 35mm;
+  height: 4mm;
+  background: var(--gray-100);
+  position: relative;
+  vertical-align: middle;
+  border-radius: 1mm;
+  overflow: hidden;
+}
+.bar-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold-light), var(--gold), var(--gold-dark));
+  border-radius: 1mm;
+}
+.bar-fill.red { background: linear-gradient(90deg, #d76b60, var(--red)); }
+.bar-fill.orange { background: linear-gradient(90deg, #d9a44f, var(--orange)); }
+.bar-fill.green { background: linear-gradient(90deg, #7a9a6c, var(--green)); }
+
+.score-num {
+  display: inline-block;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 11pt;
+  width: 18mm;
+}
+.score-num.red { color: var(--red); }
+.score-num.orange { color: var(--orange); }
+.score-num.gold { color: var(--gold-dark); }
+.score-num.green { color: var(--green); }
+
+/* ============= EXEC SUMMARY GRID ============= */
+.exec-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5mm;
+  margin: 6mm 0 8mm;
+}
+.exec-card {
+  border: 1px solid var(--gray-100);
+  padding: 5mm;
+  background: var(--gray-50);
+  border-left: 3px solid var(--gold);
+}
+.exec-card-label {
+  font-size: 7pt;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  font-weight: 700;
+  margin-bottom: 2mm;
+}
+.exec-card-value {
+  font-family: var(--serif);
+  font-size: 18pt;
+  color: var(--black);
+  line-height: 1.1;
+  margin-bottom: 2mm;
+}
+.exec-card-desc {
+  font-size: 8pt;
+  color: var(--gray-700);
+  line-height: 1.45;
+}
+
+/* ============= QUICK WIN CARDS ============= */
+.win-list { counter-reset: win; margin-top: 2mm; }
+.win-item {
+  position: relative;
+  padding: 2.8mm 3mm 2.8mm 12mm;
+  margin-bottom: 2mm;
+  background: var(--gray-50);
+  border-left: 2px solid var(--gold);
+}
+.win-item::before {
+  counter-increment: win;
+  content: counter(win, decimal-leading-zero);
+  position: absolute;
+  left: 3mm;
+  top: 3mm;
+  font-family: var(--serif);
+  font-size: 12pt;
+  color: var(--gold);
+  font-weight: 700;
+}
+.win-title {
+  font-size: 9pt;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 1mm;
+}
+.win-body {
+  font-size: 8.2pt;
+  color: var(--gray-700);
+  line-height: 1.42;
+}
+.win-impact {
+  font-size: 6.8pt;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  font-weight: 700;
+  margin-top: 1mm;
+}
+
+/* ============= COMPARISON TABLE ============= */
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 7pt;
+  margin: 3mm 0;
+}
+.compare-table th, .compare-table td {
+  padding: 1.4mm 1.2mm;
+  text-align: center;
+  border-bottom: 1px solid var(--gray-100);
+}
+.compare-table th {
+  background: var(--black);
+  color: var(--gold);
+  font-size: 7pt;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.compare-table th:first-child, .compare-table td:first-child {
+  text-align: left;
+  font-weight: 600;
+  color: var(--black);
+}
+.compare-table .tbc-cell { background: rgba(198,169,107,0.12); font-weight: 700; }
+.compare-table .high { color: var(--green); font-weight: 700; }
+.compare-table .low { color: var(--red); font-weight: 700; }
+
+/* ============= REVENUE TABLE ============= */
+.rev-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 9pt;
+  margin: 5mm 0;
+}
+.rev-table th {
+  background: var(--black);
+  color: var(--gold);
+  padding: 3mm;
+  font-size: 7.5pt;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-align: left;
+}
+.rev-table td {
+  padding: 2mm 2.5mm;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+  font-size: 8.5pt;
+}
+.rev-table .impact-num {
+  font-family: var(--serif);
+  font-weight: 700;
+  color: var(--gold-dark);
+  white-space: nowrap;
+}
+.rev-table tr.total td {
+  background: var(--black);
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 11pt;
+  font-family: var(--serif);
+  border-bottom: none;
+}
+
+.confidence-pill {
+  display: inline-block;
+  font-size: 7pt;
+  padding: 1mm 2mm;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 1mm;
+}
+.confidence-pill.high { background: var(--green); color: var(--white); }
+.confidence-pill.med { background: var(--orange); color: var(--white); }
+.confidence-pill.low { background: var(--gray-300); color: var(--black); }
+
+/* ============= CALL-OUT BOX ============= */
+.callout {
+  background: var(--black);
+  color: var(--white);
+  padding: 4mm 5mm;
+  margin: 4mm 0;
+  position: relative;
+  border-left: 3px solid var(--gold);
+}
+.callout::before {
+  content: '★';
+  position: absolute;
+  top: 3mm;
+  right: 4mm;
+  color: var(--gold);
+  font-size: 10pt;
+}
+.callout-eyebrow {
+  font-size: 6.5pt;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 1.5mm;
+}
+.callout h3 {
+  color: var(--white);
+  font-family: var(--serif);
+  font-size: 10.5pt;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0;
+  border: none;
+  margin: 0 0 1.5mm;
+  padding: 0;
+}
+.callout p {
+  color: rgba(255,255,255,0.78);
+  font-size: 8.5pt;
+  margin-bottom: 0;
+  line-height: 1.45;
+}
+
+/* ============= STAT GRID ============= */
+.stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 3mm;
+  margin: 5mm 0;
+}
+.stat-cell {
+  padding: 4mm;
+  background: var(--gray-50);
+  text-align: center;
+  border-bottom: 2px solid var(--gold);
+}
+.stat-num {
+  font-family: var(--serif);
+  font-size: 20pt;
+  font-weight: 700;
+  color: var(--gold-dark);
+  line-height: 1;
+  margin-bottom: 2mm;
+}
+.stat-label {
+  font-size: 7pt;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gray-700);
+  font-weight: 600;
+}
+
+/* ============= PAGE FOOTER ============= */
+.page-footer {
+  position: absolute;
+  bottom: 8mm;
+  left: 16mm;
+  right: 16mm;
+  display: flex;
+  justify-content: space-between;
+  font-size: 7pt;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  padding-top: 3mm;
+  border-top: 1px solid var(--gray-100);
+}
+.page-footer .page-num { color: var(--gold-dark); font-weight: 700; }
+
+/* ============= NEXT STEPS ============= */
+.next-steps {
+  background: var(--gray-50);
+  padding: 4mm 5mm;
+  border-left: 3px solid var(--gold);
+  margin: 3mm 0;
+}
+.next-steps ol { counter-reset: step; margin: 0; padding: 0; list-style: none; }
+.next-steps li {
+  position: relative;
+  padding-left: 10mm;
+  margin-bottom: 2mm;
+  font-size: 8.8pt;
+  line-height: 1.4;
+}
+.next-steps li::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: -0.5mm;
+  width: 7mm;
+  height: 7mm;
+  background: var(--gold);
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 9.5pt;
+}
+
+/* ============= SECTION DIVIDER ============= */
+.section-divider {
+  background: var(--black);
+  color: var(--white);
+  padding: 4mm 6mm;
+  margin: 6mm -16mm 6mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.section-divider h2 {
+  color: var(--white);
+  margin: 0;
+  font-size: 13pt;
+}
+.section-divider-num {
+  color: var(--gold);
+  font-family: var(--serif);
+  font-size: 22pt;
+  font-weight: 700;
+}
+
+</style>
+</head>
+<body>
+
+<!-- ============= PAGE 1: COVER ============= -->
+<div class="page cover">
+  <div class="cover-bg"></div>
+  <div class="cover-overlay"></div>
+  <div class="cover-inner">
+
+    <div class="cover-header">
+      <div>
+        <div class="cover-logo">TBC</div>
+        <div class="cover-logo-sub">The Blondes Cleaning</div>
+      </div>
+      <div class="cover-meta">
+        Marketing Audit Report<br>
+        09 Maggio 2026<br>
+        Confidential · Internal
+      </div>
+    </div>
+
+    <div class="cover-center">
+      <div class="cover-eyebrow">Marketing Intelligence Report</div>
+      <h1>Audit Strategico<br><em>& Roadmap</em><br>di Crescita.</h1>
+      <p class="cover-tagline">"Il valore di un brand luxury non si dichiara. Si dimostra. Questo report misura la distanza tra il claim e l'evidenza — e indica come colmarla."</p>
+
+      <div class="cover-score-block">
+        <div class="cover-score-num">60</div>
+        <div class="cover-score-info">
+          <div class="cover-score-label">Marketing Score · Grade C</div>
+          <div class="cover-score-grade">Foundation Solida</div>
+          <div class="cover-score-desc">Brand voice forte e wedge difendibile. Sblocco principale: trust signals + custom domain + proof.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cover-footer">
+      <div class="cover-footer-left">theblondescleaning.netlify.app</div>
+      <div class="cover-footer-right">Garda · Como · Milano</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============= PAGE 2: EXECUTIVE SUMMARY ============= -->
+<div class="page">
+  <div class="page-header">
+    <div class="page-header-logo">TBC</div>
+    <div class="page-header-section">01 · Executive Summary</div>
+  </div>
+
+  <div class="page-eyebrow">Sintesi Strategica</div>
+  <h1 class="page-title">Foundation luxury solida.<br><em>Trust gap</em> da chiudere.</h1>
+  <p class="page-lead">The Blondes Cleaning ha costruito una superficie estetica luxury coerente, una struttura di pricing trasparente e un funnel WhatsApp a frizione zero. Il vincolo: il brand è trust-empty in un segmento dove il prezzo richiede prove. Recuperare 25 punti di score = sbloccare il pricing power.</p>
+
+  <div class="exec-grid">
+    <div class="exec-card">
+      <div class="exec-card-label">Marketing Score</div>
+      <div class="exec-card-value">60/100</div>
+      <div class="exec-card-desc">Grade C — sopra media per estetica + voice, sotto media per evidence + autorità</div>
+    </div>
+    <div class="exec-card">
+      <div class="exec-card-label">Top Strength</div>
+      <div class="exec-card-value">Wedge</div>
+      <div class="exec-card-desc">"Housekeeping luxury per ville" sotto-occupato in Garda+Como+Milano</div>
+    </div>
+    <div class="exec-card">
+      <div class="exec-card-label">Top Gap</div>
+      <div class="exec-card-value">Trust</div>
+      <div class="exec-card-desc">Zero founder, team, recensioni reali, certificazioni, social</div>
+    </div>
+  </div>
+
+  <h2>Top 3 Mosse Prioritarie</h2>
+
+  <div class="win-list">
+    <div class="win-item">
+      <div class="win-title">Migrazione a custom domain (theblondescleaning.com / .it)</div>
+      <div class="win-body">Il subdomain netlify.app è il soffitto strutturale: zero domain authority, brand SERP inesistente, Google Business Profile non collegabile. Migrazione + 301s + aggiornamento schema/sitemap/llms.txt.</div>
+      <div class="win-impact">Impatto stimato · €1.500 – €4.000/mese</div>
+    </div>
+    <div class="win-item">
+      <div class="win-title">Chi Siamo + 1 case study per lago</div>
+      <div class="win-body">Founder con foto + bio, 2-3 staff in uniforme, 3 case study (uno per Garda/Como/Milano) con villa metratura, ADR before/after, occupancy delta, review score lift, foto reali. Chiude il delta vs PM Lake Como, Wonderful Italy, LVH.</div>
+      <div class="win-impact">Impatto stimato · €2.000 – €5.000/mese</div>
+    </div>
+    <div class="win-item">
+      <div class="win-title">Strategia linguistica coerente</div>
+      <div class="win-body">"Garda Lake / Como Lake / Milan" all'interno di copy italiano costa 50-100x di volume di ricerca. Soluzione: it-IT primario su /, /en/ mirror con hreflang corretto. Ripristina termini italiani in hero, area card, footer, schema.</div>
+      <div class="win-impact">Impatto stimato · +15-30% organico IT in 60 giorni</div>
+    </div>
+  </div>
+
+  <h2>Impatto Revenue Aggregato (6 mesi)</h2>
+  <p>Implementando l'intero stack quick-win + strategic + 12 articoli SEO + 3 location landing pages, il pipeline luxury short-let su Garda+Como+Milano è realisticamente stimabile in <strong>€11.000 – €34.000/mese di GMV gestito incrementale</strong> a maturazione. L'intervallo riflette il delta tra esecuzione conservativa (solo quick wins + dominio + chi siamo) e completa (incluso content engine, calculator, lead magnet, OTA partnership).</p>
+
+  <div class="page-footer">
+    <span>The Blondes Cleaning · Marketing Audit 2026</span>
+    <span class="page-num">02</span>
+  </div>
+</div>
+
+<!-- ============= PAGE 3: SCORE BREAKDOWN ============= -->
+<div class="page">
+  <div class="page-header">
+    <div class="page-header-logo">TBC</div>
+    <div class="page-header-section">02 · Score Breakdown</div>
+  </div>
+
+  <div class="page-eyebrow">Diagnosi per Categoria</div>
+  <h1 class="page-title">Sei dimensioni.<br><em>Sei priorità</em> chiare.</h1>
+  <p class="page-lead">Lo score composito media sei dimensioni con pesi differenti. Content + voice tirano in alto. Trust + Growth tirano in basso. La leva con miglior rapporto sforzo/risultato è chiudere il gap Brand & Trust: ogni punto guadagnato qui sblocca conversion + pricing su tutto il funnel.</p>
+
+  <table class="score-table">
+    <thead>
+      <tr>
+        <th style="width: 30%;">Categoria</th>
+        <th style="width: 12%;">Score</th>
+        <th style="width: 10%;">Peso</th>
+        <th style="width: 25%;">Performance</th>
+        <th>Finding</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Content & Messaging</strong></td>
+        <td><span class="score-num gold">72</span></td>
+        <td>25%</td>
+        <td><div class="bar"><div class="bar-fill" style="width:72%"></div></div></td>
+        <td>Voice forte. Geo terms in EN costano SEO IT.</td>
+      </tr>
+      <tr>
+        <td><strong>Conversion Optimization</strong></td>
+        <td><span class="score-num gold">72</span></td>
+        <td>20%</td>
+        <td><div class="bar"><div class="bar-fill" style="width:72%"></div></div></td>
+        <td>WhatsApp deep-link best-in-class. CTA copy generico.</td>
+      </tr>
+      <tr>
+        <td><strong>SEO & Discoverability</strong></td>
+        <td><span class="score-num orange">58</span></td>
+        <td>20%</td>
+        <td><div class="bar"><div class="bar-fill orange" style="width:58%"></div></div></td>
+        <td>Schema + llms.txt solidi. Subdomain netlify.app fatale.</td>
+      </tr>
+      <tr>
+        <td><strong>Competitive Positioning</strong></td>
+        <td><span class="score-num gold">62</span></td>
+        <td>15%</td>
+        <td><div class="bar"><div class="bar-fill" style="width:62%"></div></div></td>
+        <td>Wedge difendibile. Claim supera evidenza.</td>
+      </tr>
+      <tr>
+        <td><strong>Brand & Trust</strong></td>
+        <td><span class="score-num red">32</span></td>
+        <td>10%</td>
+        <td><div class="bar"><div class="bar-fill red" style="width:32%"></div></div></td>
+        <td>Zero founder, team, review reali, certificazioni.</td>
+      </tr>
+      <tr>
+        <td><strong>Growth & Strategy</strong></td>
+        <td><span class="score-num red">38</span></td>
+        <td>10%</td>
+        <td><div class="bar"><div class="bar-fill red" style="width:38%"></div></div></td>
+        <td>WhatsApp-only. Zero content engine. No referral.</td>
+      </tr>
+      <tr class="total-row">
+        <td><strong>SCORE COMPOSITO</strong></td>
+        <td><span class="score-num gold">60</span></td>
+        <td>100%</td>
+        <td><div class="bar"><div class="bar-fill" style="width:60%"></div></div></td>
+        <td><strong>Grade C — Foundation Solida</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <div class="callout-eyebrow">Insight Strategico</div>
+    <h3>Il delta tra 60 e 80 si chiude con prove, non con design.</h3>
+    <p>Le tre dimensioni con score sotto 60 (SEO, Trust, Growth) richiedono asset esterni alla pagina: dominio, founder, recensioni reali, contenuto, partnership. Aggiungere copy o ridisegnare la home non muove l'ago. Bisogna spostare il lavoro dai pixel agli asset di credibilità.</p>
+  </div>
+
+  <div class="page-footer">
+    <span>The Blondes Cleaning · Marketing Audit 2026</span>
+    <span class="page-num">03</span>
+  </div>
+</div>
+
+<!-- ============= PAGE 4: QUICK WINS ============= -->
+<div class="page">
+  <div class="page-header">
+    <div class="page-header-logo">TBC</div>
+    <div class="page-header-section">03 · Quick Wins</div>
+  </div>
+
+  <div class="page-eyebrow">Settimana 1 · Effort Basso · Impatto Alto</div>
+  <h1 class="page-title">Dieci interventi che<br><em>spostano l'ago</em> subito.</h1>
+  <p class="page-lead">Modifiche realizzabili in giorni, non settimane. Ogni voce è una riga di codice, una riga di copy, o un'immagine sostituita. Implementare tutte e dieci richiede meno di una giornata di lavoro tecnico e produce un lift composito stimabile tra +10% e +25% sul tasso di conversione lead.</p>
+
+  <div class="win-list">
+
+    <div class="win-item">
+      <div class="win-title">Ripristina termini geografici italiani</div>
+      <div class="win-body">"Garda Lake / Como Lake / Milan" → "Lago di Garda / Lago di Como / Milano" in hero eyebrow, subheadline, area card H3, footer, schema. L'utente italiano cerca in italiano: il volume mensile è 50-100× superiore.</div>
+      <div class="win-impact">Lift · +15-30% organico IT in 60 giorni</div>
+    </div>
+
+    <div class="win-item">
+      <div class="win-title">Lead hero con il numero di prova</div>
+      <div class="win-body">Aggiungi sotto H1: "Rendimento medio +30% in sei mesi · Recensioni 5 stelle · Zero pensieri." Il dato esiste già nella testimonianza Roberto F. ma è sepolto.</div>
+      <div class="win-impact">Lift · +8-15% scroll-past-hero</div>
+    </div>
+
+    <div class="win-item">
+      <div class="win-title">Riscrivi CTA primaria</div>
+      <div class="win-body">"Richiedi Gestione Completa" → "Calcola il tuo rendimento su WhatsApp". Specifico, low-commitment, value-led. La promessa di calcolo abbatte la barriera psicologica del "preventivo".</div>
+      <div class="win-impact">Lift · +15-25% CTR primario</div>
+    </div>
+
+    <div class="win-item">
+      <div class="win-title">Elimina o demota CTA secondaria nell'hero</div>
+      <div class="win-body">"Scopri Come Funziona" compete con la primaria. Demota a text link inline o rimuovi. Single-CTA hero tipicamente lifta clicks 10-20%.</div>
+      <div class="win-impact">Lift · +10-20% click primaria</div>
+    </div>
+
+    <div class="win-item">
+      <div class="win-title">Risk-reversal sotto la CTA</div>
+      <div class="win-body">"Risposta entro 24 ore · Sopralluogo gratuito · Nessun obbligo" — già presente nella brochure, mancante nell'hero del sito. Trasforma micro-impegno in conversion.</div>
+      <div class="win-impact">Lift · +5-10% click su CTA</div>
+    </div>
+
+    <div class="win-item">
+      <div class="win-title">Tier-specific WhatsApp prefill</div>
+      <div class="win-body">Ogni card pricing apre WhatsApp con messaggio pre-compilato del tier ("Sono interessato al pacchetto ELITE per la mia villa a Como"). Migliora qualifica lead + close rate vendita.</div>
+      <div class="win-impact">Lift · +10-15% close rate post-lead</div>
+    </div>
+
+    <div class="win-item">
+      <div class="win-title">Esempio rendimento annuo su Premium</div>
+      <div class="win-body">"Villa €200/notte × 60% occupancy − 25% commissione ≈ €36k netti/anno". Ancora il decision-maker su Premium invece che Signature.</div>
+      <div class="win-impact">Lift · +5-10% mix Premium</div>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <span>The Blondes Cleaning · Marketing Audit 2026</span>
+    <span class="page-num">04</span>
+  </div>
+</div>
+
+<!-- ============= PAGE 4B: QUICK WINS CONT. ============= -->
+<div class="page">
+  <div class="page-header">
+    <div class="page-header-logo">TBC</div>
+    <div class="page-header-section">03 · Quick Wins (cont.)</div>
+  </div>
+
+  <div class="page-eyebrow">Settimana 1 · Continua</div>
+  <h1 class="page-title">Cinque interventi tecnici<br><em>per chiudere</em> il quick win loop.</h1>
+  <p class="page-lead">Dopo i sei copy/UX win sopra, questi cinque interventi puliscono il layer tecnico-SEO e portano l'igiene del sito al livello che il pricing richiede.</p>
+
+  <div class="win-list">
+
+    <div class="win-item">
+      <div class="win-title">Testimonial con location + tipologia villa</div>
+      <div class="win-body">"Marco V. (Garda Lake)" → "Marco V. — Villa 6 camere, Sirmione · Punteggio Booking 9.6". Aggiungi piccolo logo Booking/Airbnb.</div>
+      <div class="win-impact">Lift · +10% conversione sezione testimonial</div>
+    </div>
+
+    <div class="win-item">
+      <div class="win-title">Async load Google Fonts + self-host OG image</div>
+      <div class="win-body">media="print" onload="this.media='all'" sui font CSS — taglia ~400ms render-blocking. Self-host og.jpg 1200×630 + aggiungi twitter:image.</div>
+      <div class="win-impact">Lift · LCP -300/500ms · OG share fix</div>
+    </div>
+
+    <div class="win-item">
+      <div class="win-title">Pulizia tecnica sitemap + meta keywords</div>
+      <div class="win-body">Rimuovi meta name="keywords" (ignorato + spam-look). Verifica entry sitemap brochure.pdf (esiste?). Rimuovi entry rotte.</div>
+      <div class="win-impact">Lift · igiene technical SEO</div>
+    </div>
+
+    <div class="win-item">
+      <div class="win-title">Promessa risposta luxury</div>
+      <div class="win-body">"Risposta entro 24 ore" → "Risposta entro 2 ore (Lun-Sab)". I competitor luxury promettono &lt;2h; il 24h è generalista.</div>
+      <div class="win-impact">Lift · +5-8% click CTA</div>
+    </div>
+
+    <div class="win-item">
+      <div class="win-title">Inline CTA mid-scroll</div>
+      <div class="win-body">Inserisci CTA WhatsApp inline dopo pricing e dopo testimonial (oltre alla sticky bar). Riduce drop-off su pagina lunga (14 sezioni).</div>
+      <div class="win-impact">Lift · +5-12% conversion mid-funnel</div>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <span>The Blondes Cleaning · Marketing Audit 2026</span>
+    <span class="page-num">05</span>
+  </div>
+</div>
+
+<!-- ============= PAGE 5: STRATEGIC ============= -->
+<div class="page">
+  <div class="page-header">
+    <div class="page-header-logo">TBC</div>
+    <div class="page-header-section">04 · Strategic Recommendations</div>
+  </div>
+
+  <div class="page-eyebrow">Mese 1 · Asset & Costruzione Trust</div>
+  <h1 class="page-title">Costruire le prove<br>che <em>chiudono il gap.</em></h1>
+  <p class="page-lead">I quick win lavorano sulla pagina. Le strategic recommendations lavorano sugli asset esterni alla pagina: dominio, founder, case study, pagine geo, schema esteso, hreflang. È qui che si sblocca la conversion al 25-30% di commissione e si crea autorità organica difendibile.</p>
+
+  <h2>1 · Migrazione a Custom Domain</h2>
+  <p>Registra <strong>theblondescleaning.com</strong> o <strong>.it</strong>, punta DNS su Netlify, configura 301s da netlify.app, aggiorna URL canonical in schema/OG/sitemap/llms.txt. Singolo unlock con maggior leverage SEO + brand trust. Senza dominio proprio nessun signal di autorità si accumula.</p>
+
+  <h2>2 · Pagina "Chi Siamo" + Team</h2>
+  <p>Founder con foto e bio (200-300 parole), 2-3 staff in uniforme, partner assicurativo, menzione NDA con i proprietari, certificazioni se presenti (HACCP, GDPR, RC professionale fino a €X). Link da header. Buyer luxury B2B googlano il founder prima di firmare un contratto al 25-30%.</p>
+
+  <h2>3 · Tre Case Study (uno per lago)</h2>
+  <p>Per Garda, Como, Milano: villa metratura, before/after occupancy, ADR delta, review-score lift, ROI proprietario, foto autorizzate o anonimizzate ("Villa 420 mq, Bellagio"). Link dalle pricing card ("vedi un caso reale") e dalle area card. Singolo asset più alto-leverage per servizio al 20-30% commissione.</p>
+
+  <h2>4 · Banda Metriche Above-the-Fold</h2>
+  <p>"X immobili gestiti · Y notti gestite/anno · Z% occupancy media · 4.9★ media review · €1.5M assicurazione RCT". Chiude il delta trust vs PM Lake Como (20+ anni), Wonderful Italy (tech stack), LVH (press portfolio).</p>
+
+  <h2>5 · Tre Location Landing Pages</h2>
+  <p><code>/gestione-affitti-brevi-lago-di-garda/</code> · <code>/property-management-lago-di-como/</code> · <code>/housekeeping-ville-milano/</code>. Ciascuna 800-1.200 parole, geo schema, immagini locali, link interni dalle area card. Unica strada realistica per rankare query long-tail italiane competitive.</p>
+
+  <div class="page-footer">
+    <span>The Blondes Cleaning · Marketing Audit 2026</span>
+    <span class="page-num">06</span>
+  </div>
+</div>
+
+<!-- ============= PAGE 6B: STRATEGIC CONT ============= -->
+<div class="page">
+  <div class="page-header">
+    <div class="page-header-logo">TBC</div>
+    <div class="page-header-section">04 · Strategic (cont.)</div>
+  </div>
+
+  <div class="page-eyebrow">Mese 1 · Continua</div>
+  <h1 class="page-title">Cinque interventi tecnici<br>di <em>autorità</em> e funnel.</h1>
+  <p class="page-lead">Dopo il dominio, il founder e i case study, restano cinque mosse che chiudono il loop SEO + funnel: hreflang, schema esteso, calculator, lead magnet, immagini self-hosted. Tutte richiedono lavoro tecnico, non creativo.</p>
+
+  <h2>6 · Strategia hreflang</h2>
+  <p>Commit it-IT primario su <code>/</code>, costruisci <code>/en/</code> mirror, aggiungi <code>&lt;link rel="alternate" hreflang="it"&gt;</code>, <code>hreflang="en"</code>, <code>x-default</code>. Smettila con il bilingual mixing nella stessa pagina (Google sceglie un locale e seppellisce l'altro).</p>
+
+  <h2>7 · Estensione Schema LocalBusiness</h2>
+  <p>Aggiungi <code>address</code> (PostalAddress), <code>geo</code> (GeoCoordinates ~Sirmione 45.4836,10.6068), <code>openingHoursSpecification</code>, <code>priceRange</code> valido ("€€€"), <code>Organization.logo</code>. Quando hai 5+ recensioni reali → <code>aggregateRating</code> + <code>Review</code> per stelline in SERP.</p>
+
+  <h2>8 · Owner Revenue Calculator</h2>
+  <p>Pagina <code>/calcolatore-rendimento/</code>: input mq + zona + stagionalità → output proiezione annuale per ciascun tier. Trasforma browser in lead qualificati e giustifica visivamente la commissione 30% Elite.</p>
+
+  <h2>9 · Lead-Magnet + Sequenza Email</h2>
+  <p>"Report annuale rendimenti short-let Lago di Garda 2026" PDF gated. 5-email nurture (giorni 0/3/7/14/21) terminante con consult WhatsApp. Cattura top-funnel non pronto a chattare oggi. Email &gt; WhatsApp per buyer luxury cauti.</p>
+
+  <h2>10 · Self-Hosting Hero + Gallery</h2>
+  <p>Sostituisci Unsplash hotlinks con AVIF/WebP self-hosted, <code>loading="lazy"</code>, <code>fetchpriority="high"</code> sull'hero, <code>&lt;link rel="preload" as="image"&gt;</code> per LCP. Migliora Core Web Vitals + rende le immagini indicizzabili in Google Images.</p>
+
+  <div class="page-footer">
+    <span>The Blondes Cleaning · Marketing Audit 2026</span>
+    <span class="page-num">07</span>
+  </div>
+</div>
+
+<!-- ============= PAGE 6: COMPETITIVE ============= -->
+<div class="page">
+  <div class="page-header">
+    <div class="page-header-logo">TBC</div>
+    <div class="page-header-section">05 · Competitive Landscape</div>
+  </div>
+
+  <div class="page-eyebrow">Posizionamento vs Mercato</div>
+  <h1 class="page-title">Sei competitor.<br>Un <em>wedge unico</em>.</h1>
+  <p class="page-lead">Mappatura dei principali operatori sui mercati Garda + Como + Milano. TBC vince su pricing transparency e multi-region scope, perde su trust signals e domain authority. Il wedge "housekeeping luxury-first" è genuinamente sotto-occupato — se l'evidenza catturerà il claim.</p>
+
+  <h2>Set Competitivo</h2>
+
+  <table class="rev-table" style="font-size:8pt;">
+    <thead>
+      <tr>
+        <th style="font-size:6.5pt;">Competitor</th>
+        <th style="font-size:6.5pt;">Pricing</th>
+        <th style="font-size:6.5pt;">Differenziatore</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Rent All Como</strong></td><td>Non pubblico</td><td>Portfolio curato 100+ ville · staff locale</td></tr>
+      <tr><td><strong>PM Lake Como</strong></td><td>Non pubblico</td><td>20+ anni · focus privacy/discrezione</td></tr>
+      <tr><td><strong>Wonderful Italy</strong></td><td>Quote-based</td><td>Tech stack AI pricing · hub nazionale</td></tr>
+      <tr><td><strong>Garda Homing</strong></td><td>% only</td><td>No-penalty trial · mid-market</td></tr>
+      <tr><td><strong>HostPlace</strong></td><td>15/30/36% IVA inc.</td><td>Unico con tier % pubblicate · 9 città</td></tr>
+      <tr><td><strong>LVH Global Milan</strong></td><td>€2.7K–€15K/notte</td><td>Press Forbes/Vogue · butler-tier · charter</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Matrice Comparativa (1 = basso, 10 = eccellente)</h2>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Dimensione</th>
+        <th>TBC</th>
+        <th>Rent All Como</th>
+        <th>PM Lake Como</th>
+        <th>Wonderful IT</th>
+        <th>Garda Homing</th>
+        <th>HostPlace</th>
+        <th>LVH</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Headline Clarity</td><td class="tbc-cell">7</td><td>6</td><td>6</td><td>8</td><td>8</td><td>8</td><td>8</td></tr>
+      <tr><td>Value Prop</td><td class="tbc-cell">7</td><td>6</td><td>8</td><td>8</td><td>8</td><td>6</td><td class="high">10</td></tr>
+      <tr><td>Trust Signals</td><td class="tbc-cell low">3</td><td>8</td><td class="high">10</td><td class="high">10</td><td>8</td><td class="high">10</td><td class="high">10</td></tr>
+      <tr><td>CTA Effectiveness</td><td class="tbc-cell">8</td><td>6</td><td>6</td><td>8</td><td>8</td><td>8</td><td>8</td></tr>
+      <tr><td>Pricing Clarity</td><td class="tbc-cell high">10</td><td>2</td><td>2</td><td>4</td><td>4</td><td class="high">10</td><td>8</td></tr>
+      <tr><td>Content Depth</td><td class="tbc-cell">5</td><td>8</td><td>8</td><td class="high">10</td><td>6</td><td>8</td><td class="high">10</td></tr>
+      <tr><td>Luxury Angle</td><td class="tbc-cell">8</td><td>8</td><td class="high">10</td><td>4</td><td>2</td><td>4</td><td class="high">10</td></tr>
+      <tr><td>Domain Authority</td><td class="tbc-cell low">0</td><td>8</td><td>8</td><td class="high">10</td><td>6</td><td>8</td><td class="high">10</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <div class="callout-eyebrow">White Space Opportunities</div>
+    <h3>Cinque vuoti che TBC può occupare prima dei competitor.</h3>
+    <p>1. Operatore luxury tri-regione unificato (nessuno copre Garda+Como+Milano sotto un brand). 2. €/mq pubblicato per housekeeping standalone (solo HostPlace pubblica %, nessuno €/mq). 3. Specifiche linen/welcome-kit documentate (brand, GSM, ciclo refresh). 4. Content parità EN+IT per buyer internazionali su Como/Garda. 5. Protocollo assicurazione/danni esplicito.</p>
+  </div>
+
+  <div class="page-footer">
+    <span>The Blondes Cleaning · Marketing Audit 2026</span>
+    <span class="page-num">06</span>
+  </div>
+</div>
+
+<!-- ============= PAGE 7: REVENUE IMPACT ============= -->
+<div class="page">
+  <div class="page-header">
+    <div class="page-header-logo">TBC</div>
+    <div class="page-header-section">06 · Revenue Impact</div>
+  </div>
+
+  <div class="page-eyebrow">Stima Impatto Economico</div>
+  <h1 class="page-title">Da claim a <em>pipeline</em>.<br>Mappatura ROI.</h1>
+  <p class="page-lead">Stime conservative basate su pipeline single-digit attuale (sito su subdomain, no traffico organico significativo) e gross medio Premium ~€2.500-€4.000/mese/proprietà. Confidence pill indica grado di certezza dell'impatto stimato sulla base di benchmark di settore + audit subagent.</p>
+
+  <table class="rev-table">
+    <thead>
+      <tr>
+        <th>Iniziativa</th>
+        <th>Impatto/mese</th>
+        <th>Confidence</th>
+        <th>Timeline</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Custom domain + 301s</td>
+        <td class="impact-num">€1.500 – €4.000</td>
+        <td><span class="confidence-pill high">High</span></td>
+        <td>1 settimana</td>
+      </tr>
+      <tr>
+        <td>Geo terms italiani + H3 keyword</td>
+        <td class="impact-num">€1.000 – €3.000</td>
+        <td><span class="confidence-pill high">High</span></td>
+        <td>1 settimana</td>
+      </tr>
+      <tr>
+        <td>Chi Siamo + 1 case study/lago</td>
+        <td class="impact-num">€2.000 – €5.000</td>
+        <td><span class="confidence-pill high">High</span></td>
+        <td>3 settimane</td>
+      </tr>
+      <tr>
+        <td>Hero CTA rewrite + risk reversal + proof</td>
+        <td class="impact-num">€1.500 – €3.500</td>
+        <td><span class="confidence-pill high">High</span></td>
+        <td>3 giorni</td>
+      </tr>
+      <tr>
+        <td>Tier-specific WhatsApp + revenue example</td>
+        <td class="impact-num">€1.000 – €2.500</td>
+        <td><span class="confidence-pill med">Medium</span></td>
+        <td>1 settimana</td>
+      </tr>
+      <tr>
+        <td>Owner revenue calculator</td>
+        <td class="impact-num">€500 – €1.500</td>
+        <td><span class="confidence-pill med">Medium</span></td>
+        <td>2 settimane</td>
+      </tr>
+      <tr>
+        <td>Lead magnet + 5-email nurture</td>
+        <td class="impact-num">€500 – €1.500</td>
+        <td><span class="confidence-pill med">Medium</span></td>
+        <td>3 settimane</td>
+      </tr>
+      <tr>
+        <td>Tre location landing page</td>
+        <td class="impact-num">€1.000 – €3.000</td>
+        <td><span class="confidence-pill med">Medium</span></td>
+        <td>4-6 settimane</td>
+      </tr>
+      <tr>
+        <td>SEO content engine (12 articoli, ramp-up)</td>
+        <td class="impact-num">€2.000 – €8.000</td>
+        <td><span class="confidence-pill med">Medium</span></td>
+        <td>3-6 mesi</td>
+      </tr>
+      <tr>
+        <td>Bundle concierge cross-sell</td>
+        <td class="impact-num">€500 – €2.000</td>
+        <td><span class="confidence-pill med">Medium</span></td>
+        <td>4 settimane</td>
+      </tr>
+      <tr class="total">
+        <td><strong>TOTALE @ 6 MESI</strong></td>
+        <td class="impact-num"><strong>€11.000 – €34.000</strong></td>
+        <td></td>
+        <td><strong>Maturazione 6 mesi</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Distribuzione Impatto per Orizzonte</h2>
+  <div class="stat-grid">
+    <div class="stat-cell">
+      <div class="stat-num">€6K</div>
+      <div class="stat-label">Quick win<br>(1 settimana)</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num">€15K</div>
+      <div class="stat-label">Strategic<br>(1 mese)</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num">€10K</div>
+      <div class="stat-label">Long-term<br>(3 mesi)</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num">€34K</div>
+      <div class="stat-label">Totale<br>maturità</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>The Blondes Cleaning · Marketing Audit 2026</span>
+    <span class="page-num">07</span>
+  </div>
+</div>
+
+<!-- ============= PAGE 8: NEXT STEPS ============= -->
+<div class="page">
+  <div class="page-header">
+    <div class="page-header-logo">TBC</div>
+    <div class="page-header-section">07 · Next Steps</div>
+  </div>
+
+  <div class="page-eyebrow">Roadmap Esecutiva</div>
+  <h1 class="page-title">Otto azioni.<br>In <em>ordine di leverage.</em></h1>
+  <p class="page-lead">La sequenza non è arbitraria. Ogni passo abilita il successivo: il dominio sblocca l'autorità che dà valore al content; il Chi Siamo sblocca la conversion che giustifica gli investimenti in landing geo; le landing geo nutrono il content engine che sostiene l'organico.</p>
+
+  <div class="next-steps">
+    <ol>
+      <li><strong>Acquisisci dominio custom</strong> (theblondescleaning.com o .it), migra con 301s, aggiorna schema/OG/sitemap/llms.txt.</li>
+      <li><strong>Ripristina termini geografici italiani</strong> in hero, area card, footer, schema. Singola ora di lavoro a maggior ROI.</li>
+      <li><strong>Costruisci Chi Siamo + 1 case study per lago</strong> con foto founder, team nominato, recensioni reali attribuite, numeri before/after.</li>
+      <li><strong>Riscrivi hero CTA</strong> + aggiungi risk-reversal + lead con il numero +30% di prova.</li>
+      <li><strong>Self-host hero/gallery imagery</strong> (AVIF/WebP) + async-fonts + critical CSS.</li>
+      <li><strong>Estendi schema LocalBusiness</strong> (address, geo, aggregateRating, priceRange valido, Organization.logo).</li>
+      <li><strong>Implementa hreflang</strong> (it-IT primario, /en/ mirror, x-default).</li>
+      <li><strong>Costruisci 3 location landing page</strong> + avvia content engine SEO (12 articoli cornerstone).</li>
+    </ol>
+  </div>
+
+  <h2>Iniziative di Lungo Periodo</h2>
+  <ul>
+    <li><strong>Soft-rebrand</strong> da "Cleaning" a "Villa Management" sulla brand surface (mantieni entità legale). 6-12 mesi di transizione.</li>
+    <li><strong>SEO content engine</strong>: 12 articoli cornerstone su rendimenti, tassazione cedolare secca, comparison property manager, standard housekeeping. Vertical sotto-ottimizzato.</li>
+    <li><strong>Productize concierge cross-sell</strong>: bundle "Welcome Suite" (chef + sommelier + transfer + flowers) a margine fisso, target attach rate 25%.</li>
+    <li><strong>Programma referral proprietari</strong>: 10% rebate × 6 mesi per referenza che chiude. Loop virale dentro network villa-owner.</li>
+    <li><strong>OTA + broker channel</strong>: Airbnb Luxe / Plum Guide listing, co-marketing con 3-5 agenzie immobiliari luxury per lago.</li>
+    <li><strong>Roadmap geografica</strong>: Garda → Como → Milano → Versilia / Lago Maggiore / Cortina / Sardegna. City-pod model. Target €10M GMV-under-management in 36 mesi.</li>
+    <li><strong>Owner-portal SaaS layer</strong>: dashboard live bookings, revenue, cleaning logs, foto audit. Trasforma servizio commodity in piattaforma sticky con switching cost.</li>
+  </ul>
+
+  <div class="callout">
+    <div class="callout-eyebrow">Sintesi Finale</div>
+    <h3>"Il claim luxury è corretto. L'evidenza è il prossimo capitolo."</h3>
+    <p>TBC ha fatto la parte difficile: ha identificato un wedge difendibile e ha costruito una superficie estetica coerente. Il lavoro che resta è meno creativo e più operativo — dominio, founder, foto reali, recensioni vere, 12 articoli, 3 landing page. Niente di sofisticato. Tutto ad alto leverage.</p>
+  </div>
+
+  <div class="page-footer">
+    <span>The Blondes Cleaning · Marketing Audit 2026 · Confidential</span>
+    <span class="page-num">08</span>
+  </div>
+</div>
+
+</body>
+</html>

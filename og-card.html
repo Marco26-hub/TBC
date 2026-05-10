@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1200px;height:630px;font-family:'Inter',sans-serif;background:#0A0A0A;color:#fff;display:flex;align-items:center;justify-content:flex-start;padding:80px;position:relative;overflow:hidden}
+.bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=80') center/cover;opacity:0.32}
+.overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,10,10,0.85) 50%,rgba(10,10,10,0.6) 100%)}
+.content{position:relative;z-index:2;max-width:780px}
+.eyebrow{font-size:14px;letter-spacing:0.32em;text-transform:uppercase;color:#C6A96B;font-weight:700;margin-bottom:24px}
+h1{font-family:'Playfair Display',serif;font-size:64px;font-weight:600;line-height:1.05;letter-spacing:-0.015em;color:#fff;margin-bottom:24px}
+em{color:#C6A96B;font-style:italic}
+.tag{font-family:'Playfair Display',serif;font-style:italic;font-size:22px;color:rgba(255,255,255,0.78);line-height:1.4;margin-bottom:36px;max-width:680px}
+.locations{display:flex;gap:32px;font-size:14px;letter-spacing:0.28em;text-transform:uppercase;color:#C6A96B;font-weight:600}
+.brand{position:absolute;top:48px;right:80px;text-align:right;z-index:2}
+.brand-mark{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:#C6A96B;letter-spacing:0.04em}
+.brand-sub{font-size:11px;letter-spacing:0.32em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-top:4px}
+.divider{width:80px;height:2px;background:#C6A96B;margin-bottom:24px}
+</style></head>
+<body>
+<div class="bg"></div>
+<div class="overlay"></div>
+<div class="brand">
+  <div class="brand-mark">TBC</div>
+  <div class="brand-sub">The Blondes Cleaning</div>
+</div>
+<div class="content">
+  <div class="eyebrow">Property Management Luxury</div>
+  <div class="divider"></div>
+  <h1>Gestione Affitti Brevi<br>e <em>Housekeeping</em><br>Ville Luxury.</h1>
+  <p class="tag">Property management completo per ville e proprietà premium su Lago di Garda, Lago di Como e Milano.</p>
+  <div class="locations">
+    <span>Lago di Garda</span><span>Lago di Como</span><span>Milano</span>
+  </div>
+</div>
+</body></html>
