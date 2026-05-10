@@ -15,6 +15,7 @@ contratti.zip
 node_modules/
 tbc-bot/
 .claude/
+.playwright-mcp/
 *.zip
 .env
 .env.*

@@ -52,7 +52,7 @@ The biggest single gap is **proof**. Every claim ("standard luxury", "biancheria
 7. **Annual revenue example on Premium tier**: "Villa €200/notte × 60% occupancy − 25% ≈ €36k netti/anno." Pushes mix from Signature to Premium. *+5–10% Premium share.*
 8. **Replace anonymous testimonials**: "Marco V. (Garda Lake)" → "Marco V. — Villa 6 camere, Sirmione · Punteggio Booking 9.6". Add small Booking/Airbnb logo. *+10% testimonial-section conversion.*
 9. **Remove `meta name="keywords"`** (line 10) — ignored by Google, looks spammy.
-10. **Fix sitemap bug** — `/brochure.pdf` listed but file may be missing or named differently. Verify path.
+10. **Fix sitemap bug** — `/assets/docs/brochure.pdf` listed but file may be missing or named differently. Verify path.
 11. **Self-host OG image** (1200×630 `og.jpg`) and add `<meta name="twitter:image">`. Currently OG image is an Unsplash hotlink — break risk.
 12. **Async-load Google Fonts** (`media="print" onload="this.media='all'"`) — saves ~400ms render-blocking on LCP.
 

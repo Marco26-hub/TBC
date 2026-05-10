@@ -6,8 +6,8 @@ Premium luxury property management landing page for Lake Garda, Milan, and Como.
 
 ```
 ├── index.html       # Complete HTML structure (10 sections)
-├── styles.css       # Responsive CSS (mobile-first)
-├── script.js        # Navigation & smooth scroll
+├── assets/css/styles.css       # Responsive CSS (mobile-first)
+├── assets/js/script.js        # Navigation & smooth scroll
 └── README.md        # This file
 ```
 
@@ -115,7 +115,7 @@ Replace `?text=` message with your custom message (URL encoded).
 ## 🔧 Customization
 
 ### Change Colors
-Edit these CSS variables in `styles.css`:
+Edit these CSS variables in `assets/css/styles.css`:
 - `#0a0a0a` → Primary Black
 - `#c6a96b` → Accent Gold
 - `#f5f5f5` → Background Light Gray
@@ -224,7 +224,7 @@ Add to `<head>`:
 ```
 
 ### Track WhatsApp Clicks
-Edit `script.js` to add:
+Edit `assets/js/script.js` to add:
 ```javascript
 document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
     link.addEventListener('click', () => {
@@ -259,8 +259,8 @@ To enhance:
 
 Current size:
 - `index.html`: ~8 KB
-- `styles.css`: ~15 KB
-- `script.js`: ~1 KB
+- `assets/css/styles.css`: ~15 KB
+- `assets/js/script.js`: ~1 KB
 - **Total**: ~24 KB (very fast load)
 
 ### Optimize Further:

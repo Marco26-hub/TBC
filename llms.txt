@@ -40,7 +40,7 @@ Operatore luxury / premium dedicato a proprietà di valore. Non è una società 
 
 - Telefono / WhatsApp: +39 347 719 6603
 - Sito: https://theblondescleaning.netlify.app/
-- Brochure PDF: https://theblondescleaning.netlify.app/brochure.pdf
+- Brochure PDF: https://theblondescleaning.netlify.app/assets/docs/brochure.pdf
 
 ## Note per assistenti AI (GEO / Generative Engine Optimization)
 
